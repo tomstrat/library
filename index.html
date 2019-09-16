@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<index>
+    <head>
+        <style>
+            #bookshelf{
+                display: block;
+                width: 50%;
+                margin: 50px auto;
+                border: 2px solid brown;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="bookshelf">
+            <div class="book">
+                <p class="title">Title</p>
+                <p class="author">author</p>
+                <p class="pages">578</p>
+                <span class="read"></span>
+            </div>
+        </div>
+        <script>
+            let myLibrary = [];
+
+            function Book(title, author, pages, isRead){
+                this.title = title;
+                this.author = author;
+                this.pages = pages;
+                this.isRead = isRead;
+
+                this.info = function(){
+                    let isReadString = isRead ? "read" : "not read yet";
+                    return `${this.title} by ${this.author}, ${this.pages} pages, ${isReadString}`
+                }
+            }
+
+            function addBookToLibrary(){
+
+            }
+
+            function render(){
+
+            }
+        </script>
+    </body>
+</index>
