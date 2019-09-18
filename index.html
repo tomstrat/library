@@ -6,9 +6,38 @@
             body{
                 font-family: "Open Sans";
             }
+            #topMenu{
+                width:80%;
+                margin:50px auto 0px auto;
+            }
+            #addNewBook{
+                background-color: lightblue;
+                display: block;
+                margin: 5px auto;
+                width: 100px;
+                height: 40px;
+                border: none;
+                font-size: 16px; 
+            }
+            #formHolder{
+                margin: 0 auto;
+                text-align: center;
+                border: 2px solid brown;
+                padding: 20px;
+                width: 250px;
+                background-color: sandybrown;
+            }
+            #formHolder input[type=submit]{
+                width: 100px;
+                height: 30px;
+                background-color: lightseagreen;
+                color: black;
+                border: none;
+                margin-top: 10px;
+            }
             #bookshelf{
                 display: block;
-                margin: 50px auto;
+                margin: 0 auto;
                 border: 2px solid brown;
                 width: 80%;
                 display: flex;
@@ -71,6 +100,22 @@
         </style>
     </head>
     <body>
+        <div id="topMenu">
+            <button id="addNewBook" onclick="addBookToLibrary()">Add Book</button>
+            <div id="formHolder">
+                <form>
+                    <label>Title:</label><br>
+                    <input type="text"><br>
+                    <label>Author:</label><br>
+                    <input type="text"><br>
+                    <label>Pages:</label><br>
+                    <input type="text"><br>
+                    <input type="radio" name="isRead" value="Read" checked>Read
+                    <input type="radio" name="isRead" value="notRead">Not Read<br>
+                    <input type="submit" value="Add">
+                </form>
+            </div>
+        </div>
         <div id="bookshelf">
             <div class="book">
                 <p class="title">title</p>
