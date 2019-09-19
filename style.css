@@ -7,7 +7,6 @@ body{
 }
 #addNewBook{
     background-color: lightblue;
-    display: block;
     margin: 5px auto;
     width: 100px;
     height: 40px;
@@ -22,6 +21,17 @@ body{
     width: 250px;
     background-color: sandybrown;
 }
+#closeForm{
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    border: 2px solid black;
+    background-color: white;
+    font-weight: 800;
+    position: relative;
+    left: 140px;
+    bottom: 35px;
+}
 #formHolder input[type=submit]{
     width: 100px;
     height: 30px;
@@ -29,6 +39,12 @@ body{
     color: black;
     border: none;
     margin-top: 10px;
+}
+.show{
+    display: block;
+}
+.hide{
+    display: none;
 }
 #bookshelf{
     display: block;

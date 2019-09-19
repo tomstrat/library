@@ -12,6 +12,20 @@ function Book(title, author, pages, isRead){
     }
 }
 
+function showAddBookForm(){
+    let formHolder = document.getElementById("formHolder");
+    let addBookButton = document.getElementById("addNewBook");
+    addBookButton.classList = " hide";
+    formHolder.classList = " show";
+}
+
+function hideAddBookForm(){
+    let formHolder = document.getElementById("formHolder");
+    let addBookButton = document.getElementById("addNewBook");
+    addBookButton.classList = " show";
+    formHolder.classList = " hide";
+}
+
 function addBookToLibrary(){
 
 }
@@ -49,6 +63,8 @@ function render(){
         bookshelf.appendChild(domBook);
     })
 }
+
+//Test JS
 let testBook = new Book("Shutter Island", "Dennis Lehane", 562, true);
 myLibrary.push(testBook);
 myLibrary.push(testBook);

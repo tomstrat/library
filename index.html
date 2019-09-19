@@ -6,8 +6,9 @@
     </head>
     <body>
         <div id="topMenu">
-            <button id="addNewBook" onclick="addBookToLibrary()">Add Book</button>
-            <div id="formHolder">
+            <button id="addNewBook" class="show" onclick="showAddBookForm()">Add Book</button>
+            <div id="formHolder" class="hide">
+                <button id="closeForm" onclick="hideAddBookForm()">X</button>
                 <form>
                     <label>Title:</label><br>
                     <input type="text"><br>
