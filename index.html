@@ -11,14 +11,14 @@
                 <button id="closeForm" onclick="hideAddBookForm()">X</button>
                 <form>
                     <label>Title:</label><br>
-                    <input type="text"><br>
+                    <input id="inputTitle" type="text"><br>
                     <label>Author:</label><br>
-                    <input type="text"><br>
+                    <input id="inputAuthor" type="text"><br>
                     <label>Pages:</label><br>
-                    <input type="text"><br>
-                    <input type="radio" name="isRead" value="Read" checked>Read
+                    <input id="inputPages" type="text"><br>
+                    <input id="inputRead" type="radio" name="isRead" value="Read" checked>Read
                     <input type="radio" name="isRead" value="notRead">Not Read<br>
-                    <input type="submit" value="Add">
+                    <input type="submit" value="Add" onclick="addBookToLibrary()">
                 </form>
             </div>
         </div>

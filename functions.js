@@ -27,7 +27,15 @@ function hideAddBookForm(){
 }
 
 function addBookToLibrary(){
+    let inputTitle = document.getElementById("inputTitle").value;
+    let inputAuthor = document.getElementById("inputAuthor").value;
+    let inputPages = document.getElementById("inputPages").value;
+    let inputRead = document.getElementById("inputRead");
+    let isInputRead = inputRead.checked ? true : false;
 
+    let newBook = new Book(inputTitle, inputAuthor, inputPages, isInputRead);
+    myLibrary.push(newBook);
+    render();
 }
 
 function render(){
@@ -69,4 +77,4 @@ let testBook = new Book("Shutter Island", "Dennis Lehane", 562, true);
 myLibrary.push(testBook);
 myLibrary.push(testBook);
 myLibrary.push(testBook);
-render();
+//render();
