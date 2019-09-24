@@ -1,5 +1,5 @@
 let myLibrary = [];
-let dataIdIterate = 0;
+let dataIterator = 0;
 
 function Book(title, author, pages, isRead, id){
     this.title = title;
@@ -11,6 +11,10 @@ function Book(title, author, pages, isRead, id){
     this.info = function(){
         let isReadString = isRead ? "read" : "not read yet";
         return `${this.title} by ${this.author}, ${this.pages} pages, ${isReadString}`
+    }
+
+    this.readBook = function(){
+        this.isRead = this.isRead ? false : true;
     }
 }
 
@@ -35,9 +39,9 @@ function addBookToLibrary(){
     let inputRead = document.getElementById("inputRead");
     let isInputRead = inputRead.checked ? true : false;
 
-    let newBook = new Book(inputTitle, inputAuthor, inputPages, isInputRead, dataIdIterate);
+    let newBook = new Book(inputTitle, inputAuthor, inputPages, isInputRead, dataIterator);
     myLibrary.push(newBook);
-    dataIdIterate++;
+    dataIterator++;
     render();
 }
 
@@ -49,11 +53,12 @@ function render(){
     }
     //Render the bookcase
     myLibrary.forEach(function(book){
+
         //create book DOM elements
         let domBook = document.createElement('div');
         let domTitle = document.createElement('p');
         let domAuthor = document.createElement('p');
-        let domRead = document.createElement('span');
+        let domRead = document.createElement('button');
         let domPages = document.createElement('span');
         let domRemove = document.createElement('button');
         //Add Classes & Data
@@ -73,6 +78,14 @@ function render(){
         //Add event listeners
         domRemove.addEventListener("click", (e)=>{
             myLibrary = myLibrary.filter(book => book.id != e.target.parentElement.dataset.id);
+            render();
+        });
+        domRead.addEventListener("click", (e)=>{
+            myLibrary.forEach(bookID=>{
+                if(bookID.id == e.target.parentElement.dataset.id){
+                    bookID.readBook();
+                }
+            })
             render();
         });
         //append children

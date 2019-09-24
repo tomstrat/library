@@ -109,15 +109,19 @@ body{
     border-radius: 50%;
     background-color: green;
     width: 25px;
+    height: 25px;
     color: white;
     display: block;
     margin: 15px auto;
+    border: none;
 }
 .notRead{
     border-radius: 50%;
     background-color: red;
     width: 25px;
+    height: 25px;
     color: white;
     display: block;
     margin: 15px auto;
+    border: none;
 }
