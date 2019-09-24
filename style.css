@@ -93,6 +93,18 @@ body{
     display: block;
     border-top: 1px solid darkblue;
 }
+.remove{
+    position:absolute;
+    bottom:0;
+    right:0;
+    background-color: red;
+    font-weight: 800;
+    padding: 3px 0px;
+    width: 30px;
+    color: white;
+    border: none;
+    font-size: 16px;
+}
 .read{
     border-radius: 50%;
     background-color: green;
