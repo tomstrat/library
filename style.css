@@ -32,7 +32,7 @@ body{
     left: 140px;
     bottom: 35px;
 }
-#formHolder input[type=submit]{
+#formSubmit{
     width: 100px;
     height: 30px;
     background-color: lightseagreen;
@@ -54,6 +54,7 @@ body{
     display: flex;
     justify-content: center;
     flex-flow: row wrap;
+    min-height: 250px;
 }
 .book{
     background-color: lightblue;

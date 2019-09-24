@@ -18,17 +18,20 @@
                     <input id="inputPages" type="text"><br>
                     <input id="inputRead" type="radio" name="isRead" value="Read" checked>Read
                     <input type="radio" name="isRead" value="notRead">Not Read<br>
-                    <input type="submit" value="Add" onclick="addBookToLibrary()">
                 </form>
+                <button onclick="addBookToLibrary()" id="formSubmit">Add</button>
             </div>
         </div>
         <div id="bookshelf">
+        <!--
+            example book
             <div class="book">
                 <p class="title">title</p>
                 <p class="author">author</p>
                 <span class="read">&#10003;</span>
                 <span class="pages">578</span>           
             </div>
+        -->
         </div>
         <script src="functions.js"></script>
     </body>
