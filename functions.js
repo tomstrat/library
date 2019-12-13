@@ -1,5 +1,28 @@
+
+let firestore = firebase.firestore();
+let colRef = firestore.collection("library").where("id", "==", true);
 let myLibrary = [];
 let dataIterator = 0;
+
+function initialise(){
+
+    //retreive documents from firebase
+    firestore.collection("library").get().then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc){
+            let docData = doc.data();
+            if(docData.title != undefined){
+                let newBook = new Book(docData.title, docData.author, docData.pages, docData.isRead, docData.id);
+                myLibrary.push(newBook);
+                dataIterator = doc.id + 1;
+            }
+        });
+        nowRender();
+    });
+    function nowRender(){
+        console.log(myLibrary);
+        render();
+    }
+}
 
 function Book(title, author, pages, isRead, id){
     this.title = title;
@@ -51,9 +74,18 @@ function render(){
     while(bookshelf.firstChild){
         bookshelf.removeChild(bookshelf.firstChild);
     }
+    //remove documents from firebase
+    colRef.get().then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc){
+            doc.ref.delete().then(function() {
+                console.log("Document successfully deleted!");
+            }).catch(function(error) {
+                console.error("Error removing document: ", error);
+            });
+        });
+    });
     //Render the bookcase
     myLibrary.forEach(function(book){
-
         //create book DOM elements
         let domBook = document.createElement('div');
         let domTitle = document.createElement('p');
@@ -95,6 +127,21 @@ function render(){
         domBook.appendChild(domPages);
         domBook.appendChild(domRemove);
         bookshelf.appendChild(domBook);
+
+        //add to firebase
+        firestore.collection("library").doc(book.id.toString()).set({
+            title: book.title,
+            author: book.author,
+            pages: book.pages,
+            isRead: book.isRead,
+            id: book.id
+        })
+        .then(function() {
+            console.log("Document successfully written!");
+        })
+        .catch(function(error) {
+            console.log("Error writing document: ", error);
+        });
     });
 }
 

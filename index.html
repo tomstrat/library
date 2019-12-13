@@ -4,7 +4,7 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet"> 
         <link type="text/css" rel="stylesheet" href="style.css">
     </head>
-    <body>
+    <body onload="initialise()">
         <div id="topMenu">
             <button id="addNewBook" class="show" onclick="showAddBookForm()">Add Book</button>
             <div id="formHolder" class="hide">
@@ -33,6 +33,26 @@
             </div>
         
         </div>
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-app.js"></script>
+
+        <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-firestore.js"></script>
+        <!-- Initialize Firebase -->
+        <script>
+            // Your web app's Firebase configuration
+            var firebaseConfig = {
+                apiKey: "AIzaSyDkdfGe-XaGR8iJcdVxuJFlHw6DFtEn3Qk",
+                authDomain: "library-69d9a.firebaseapp.com",
+                databaseURL: "https://library-69d9a.firebaseio.com",
+                projectId: "library-69d9a",
+                storageBucket: "library-69d9a.appspot.com",
+                messagingSenderId: "1051199120208",
+                appId: "1:1051199120208:web:332bcbdaafa2d55760c255",
+                measurementId: "G-231E96GJ80"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+        </script>
         <script src="functions.js"></script>
     </body>
 </html>
